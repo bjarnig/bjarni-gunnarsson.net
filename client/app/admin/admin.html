@@ -1,0 +1,66 @@
+<!-- <div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="user in users">
+        <strong>{{user.name}}</strong><br>
+        <span class="text-muted">{{user.email}}</span>
+        <a ng-click="delete(user)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
+    </li>
+  </ul>
+    
+    <p>Courses.</p>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="course in courses">
+        <strong>{{course.name}}</strong><br>    
+    </li>
+  </ul>
+
+</div>
+
+ -->
+
+<link href="assets/css/file-upload.css" rel="stylesheet">
+
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+    <div class="container">
+
+         <div class="content">
+
+           <div class="date">Users </div>
+          
+            <div class="hr"><hr /></div>
+    
+            <article ng-repeat="user in users">
+
+            <h1>{{user.email}}</h1>             
+
+            </article> 
+
+            <div class="date">Courses </div>
+          
+            <div class="hr"><hr /></div>
+
+            <article ng-repeat="course in courses">
+
+            <div class="date"></div>
+
+            <h1>Class {{course.number}}, {{course.name}}</h1>             
+            <p> {{course.date}}</p>
+
+            </article> 
+            
+            <div class="date">Add new Course</div>
+            <div class="hr"><hr /></div> 
+
+<form action="/api/courses" method="post" enctype="multipart/form-data">
+    <input type="file" name='file1' placeholder="Select file 1"/>
+    <input type="file" name='file2' placeholder="Select file 2"/>
+    <br/>
+    <button>Upload</button>
+</form>
+
+  </div>
+</div> <!-- /container -->
